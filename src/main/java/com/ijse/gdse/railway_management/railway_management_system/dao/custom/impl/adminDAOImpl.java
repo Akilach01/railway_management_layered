@@ -8,7 +8,7 @@ import com.ijse.gdse.railway_management.railway_management_system.util.crudUtil;
 import java.sql.SQLException;
 
 public class adminDAOImpl implements adminDAO {
-    public  boolean saveUser(registerAdminDto registerAdminDto) throws SQLException, ClassNotFoundException {
+    public boolean saveUser(registerAdminDto registerAdminDto) throws SQLException, ClassNotFoundException {
         return crudUtil.execute(
                 "insert into admin values (?,?,?,?)",
                 registerAdminDto.getUsername(),
