@@ -1,11 +1,11 @@
-package com.ijse.gdse.railway_management.railway_management_system.service.custom.impl;
+package com.ijse.gdse.railway_management.railway_management_system.bo.custom.impl;
 
 import com.ijse.gdse.railway_management.railway_management_system.dto.userDto;
-import com.ijse.gdse.railway_management.railway_management_system.service.custom.userService;
+import com.ijse.gdse.railway_management.railway_management_system.bo.custom.userBO;
 
 import java.util.ArrayList;
 
-public class userServiceImpl implements userService {
+public class userBOImpl implements userBO {
 
    userDAO userDAO = (userDAO) DAOFactory.getInstance().getDao(DaoType.user);
 
@@ -46,6 +46,7 @@ public class userServiceImpl implements userService {
     @Override
     public boolean deleteuser(String text) throws Exception {
         return userDAO.delete(text);
+
     }
 
 }

@@ -1,10 +1,11 @@
-package com.ijse.gdse.railway_management.railway_management_system.service.custom;
+package com.ijse.gdse.railway_management.railway_management_system.bo.custom;
 
+import com.ijse.gdse.railway_management.railway_management_system.bo.superBO;
 import com.ijse.gdse.railway_management.railway_management_system.dto.userDto;
 
 import java.util.ArrayList;
 
-public interface userService {
+public interface userBO extends superBO {
 
     boolean delete(String text) throws Exception;
 
