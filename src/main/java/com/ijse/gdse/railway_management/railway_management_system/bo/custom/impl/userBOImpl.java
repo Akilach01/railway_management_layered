@@ -2,19 +2,19 @@ package com.ijse.gdse.railway_management.railway_management_system.bo.custom.imp
 
 import com.ijse.gdse.railway_management.railway_management_system.dto.userDto;
 import com.ijse.gdse.railway_management.railway_management_system.bo.custom.userBO;
-
+import com.ijse.gdse.railway_management.railway_management_system.dao.*;
 import java.util.ArrayList;
 
 public class userBOImpl implements userBO {
 
-   userDAO userDAO = (userDAO) DAOFactory.getInstance().getDao(DaoType.user);
+   userDAO userDAO = (userDAO) DAOFactory.getInstance().getDao(DAOFActory.DaoType.user);
 
     @Override
     public ArrayList<userDto> getAll() throws Exception {
-        ArrayList<userDto> userDtos = new ArrayList<>();
-        ArrayList<userEntity> users = userDAO.getAll();
-        for (userEntity user : users) {
-            userDtos.add(new userDto(user.getu_id(), user.getName(), user.getcontact(),
+        ArrayList<user> users=userDAO.getAll();
+        ArrayList<userDto> userDtos=new ArrayList<>();
+        for (user user:users) {
+            userDtos.add(new userDto(user.getu_id(), user.getname(), user.getcontact(),
                     user.getgmail()));
         }
         return userDtos;
