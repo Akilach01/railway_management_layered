@@ -3,6 +3,10 @@ package com.ijse.gdse.railway_management.railway_management_system.bo.custom.imp
 import com.ijse.gdse.railway_management.railway_management_system.dto.userDto;
 import com.ijse.gdse.railway_management.railway_management_system.bo.custom.userBO;
 import com.ijse.gdse.railway_management.railway_management_system.dao.*;
+import com.ijse.gdse.railway_management.railway_management_system.entity.user;
+import com.ijse.gdse.railway_management.railway_management_system.dao.*;
+
+
 import java.util.ArrayList;
 
 public class userBOImpl implements userBO {
@@ -26,7 +30,7 @@ public class userBOImpl implements userBO {
     }
 
     @Override
-    public boolean updateUser(userDto userDto) throws Exception {
+    public boolean update(userDto userDto) throws Exception {
         return userDAO.update(new userEntity(
                 userDto.getu_iD(),
                 userDto.getName(),
@@ -35,7 +39,7 @@ public class userBOImpl implements userBO {
     }
 
     @Override
-    public boolean saveuser(userDto userDto) throws Exception {
+    public boolean save(userDto userDto) throws Exception {
         return customerDao.save(new userEntity(
                 userDto.getu_iD(),
                 userDto.getName(),
@@ -44,7 +48,7 @@ public class userBOImpl implements userBO {
     }
 
     @Override
-    public boolean deleteuser(String text) throws Exception {
+    public boolean delete(String text) throws Exception {
         return userDAO.delete(text);
 
     }
