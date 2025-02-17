@@ -1,31 +1,41 @@
 package com.ijse.gdse.railway_management.railway_management_system.bo;
 
-import com.ijse.gdse.railway_management.railway_management_system.bo.custom.impl.userBOImpl;
+import com.ijse.gdse.railway_management.railway_management_system.bo.custom.impl.*;
 
 
 public class BOFactory {
-    private static BOFactory serviceFactory;
+    private static BOFactory boFactory;
 
     private BOFactory(){}
 
     public static BOFactory getInstance(){
-        return serviceFactory == null ? new BOFactory() : serviceFactory;
+        return BOFactory == null ? new BOFactory(): boFactory();
     }
 
-    public superBO getService(serviceType type){
+    public superBO getBO(BOType type){
         switch (type) {
             case user:
                 return new userBOImpl();
+            case admin:
+                return new adminBOImpl();
+            case booking:
+                return new bookingBOImpl();
+            case login:
+                return new loginBOImpl();
+            case payment:
+                return new paymentBOImpl();
+            case schedule:
+                return new scheduleBOImpl();
+            case train:
+                return new trainBOImpl();
 
             default:
                 return null;
         }
     }
 
-    public enum serviceType{
-        user
+    public enum BOType{
+        user,admin,booking,login,payment,schedule,train
     }
-
-
 
 }
