@@ -1,6 +1,9 @@
 package com.ijse.gdse.railway_management.railway_management_system.entity;
 
+import lombok.ToString;
+
 import java.sql.Date;
+@ToString
 
 public class booking {
 
