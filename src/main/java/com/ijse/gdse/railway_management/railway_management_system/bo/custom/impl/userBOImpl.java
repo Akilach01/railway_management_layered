@@ -18,8 +18,8 @@ public class userBOImpl implements userBO {
         ArrayList<user> users=userDAO.getAll();
         ArrayList<userDto> userDtos=new ArrayList<>();
         for (user user:users) {
-            userDtos.add(new userDto(user.getu_id(), user.getname(), user.getcontact(),
-                    user.getgmail()));
+            userDtos.add(new userDto(user.getU_id(), user.getName(), user.getContact_no(),
+                    user.getGmail()));
         }
         return userDtos;
     }
@@ -31,26 +31,27 @@ public class userBOImpl implements userBO {
 
     @Override
     public boolean update(userDto userDto) throws Exception {
-        return userDAO.update(new userEntity(
-                userDto.getu_iD(),
+        return userDAO.update(new user(
+                userDto.getU_id(),
                 userDto.getName(),
-                userDto.getcontact(),
-                userDto.getgmail()));
+                userDto.getContact_no(),
+                userDto.getGmail()));
     }
 
     @Override
     public boolean save(userDto userDto) throws Exception {
-        return customerDao.save(new userEntity(
-                userDto.getu_iD(),
+        return userDAO.save(new user(
+                userDto.getU_id(),
                 userDto.getName(),
-                userDto.getcontact(),
-                userDto.getgmail()));
+                userDto.getContact_no(),
+                userDto.getGmail()));
     }
 
     @Override
     public boolean delete(String text) throws Exception {
         return userDAO.delete(text);
 
+        
     }
 
 }

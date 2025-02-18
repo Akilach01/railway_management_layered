@@ -61,7 +61,7 @@ public class trainController {
     void saveTrainOnAction(ActionEvent event) {
         String trainId = txtTrainId.getText();
         String trainName = txtTrainName.getText();
-        String trainType = txtTrainType.getText();
+        String trainType = txtTrainType.getValue();
 
         if (trainId.isEmpty() || trainName.isEmpty() || trainType.isEmpty()) {
             showAlert("Error", "All fields must be filled!", Alert.AlertType.ERROR);
@@ -90,7 +90,7 @@ public class trainController {
         // Get new values from input fields
         String trainId = txtTrainId.getText();
         String trainName = txtTrainName.getText();
-        String trainType = txtTrainType.getText();
+        String trainType = txtTrainType.getValue();
 
         if (trainId.isEmpty() || trainName.isEmpty() || trainType.isEmpty()) {
             showAlert("Error", "All fields must be filled!", Alert.AlertType.ERROR);
@@ -122,10 +122,10 @@ public class trainController {
     private void clearFields() {
         txtTrainId.clear();
         txtTrainName.clear();
-        txtTrainType.clear();
+        txtTrainType.setValue(null);
     }
     }
-}
+
 
 
 

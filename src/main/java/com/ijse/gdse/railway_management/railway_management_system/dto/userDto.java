@@ -14,4 +14,6 @@ public class userDto {
     private  String name;
     private int contact_no;
      private String gmail;
+
+
 }

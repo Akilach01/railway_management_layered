@@ -13,11 +13,12 @@ import lombok.*;
 public class paymentDAOImpl implements paymentDAO {
     private String p_id;
     private Double amount;
-    private String booking_id    ;
+    private String booking_id;
     private String date;
     private String method;
 
     public paymentDAOImpl getAll() {
         return null;
 
+    }
 }

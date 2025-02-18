@@ -6,5 +6,5 @@ import com.ijse.gdse.railway_management.railway_management_system.dao.custom.imp
 public interface paymentDAO extends crudDAO {
 
     paymentDAOImpl getAllPayments();
-        return null;
+
 }

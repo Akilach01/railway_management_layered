@@ -189,7 +189,7 @@ private void loadUsers() {
 }
 
 private void clearFields() {
-    txtUserId.clear();
+    txtUserId.setValue(null);
     txtUserName.clear();
     txtContactNo.clear();
     txtGmail.clear();
@@ -204,7 +204,7 @@ private void showAlert(Alert.AlertType alertType, String title, String message) 
 
    }
 
-  }
+
 
 
 
